@@ -55,3 +55,112 @@ h1 {
   color: #78716c;
   font-size: 14px;
 }
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 24px 0 20px;
+  font-size: 14px;
+  color: #57534e;
+}
+
+.field input {
+  height: 40px;
+  padding: 0 12px;
+  border: 1px solid #d6c4aa;
+  border-radius: 10px;
+  background: #fff;
+  font: inherit;
+  color: inherit;
+}
+
+.record-block {
+  display: grid;
+  justify-items: start;
+  gap: 12px;
+}
+
+.record-button {
+  min-width: 168px;
+  height: 48px;
+  padding: 0 20px;
+  border: 0;
+  border-radius: 999px;
+  background: #b45309;
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.record-button.is-recording {
+  background: #9f1239;
+}
+
+.record-button:disabled {
+  background: #d6c4aa;
+  cursor: not-allowed;
+}
+
+.record-live {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.record-timer {
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+  color: #9f1239;
+}
+
+.text-button {
+  border: 0;
+  padding: 0;
+  background: none;
+  color: #57534e;
+  font: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.error {
+  margin: 16px 0 0;
+  color: #9f1239;
+  line-height: 1.5;
+}
+
+.preview {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid #e7dccb;
+}
+
+.preview h2 {
+  margin: 0 0 12px;
+  font-size: 16px;
+}
+
+.preview audio {
+  width: 100%;
+}
+
+.meta,
+.download {
+  display: block;
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+.meta {
+  color: #57534e;
+}
+
+.download {
+  color: #9a3412;
+}
+
