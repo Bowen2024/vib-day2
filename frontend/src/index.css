@@ -1,0 +1,57 @@
+:root {
+  font-family: "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", sans-serif;
+  color: #1c1917;
+  background: #f5f1ea;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 32px 16px;
+}
+
+.card {
+  width: min(640px, 100%);
+  background: #fffaf3;
+  border: 1px solid #e7dccb;
+  border-radius: 16px;
+  padding: 32px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: #8a6a45;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+}
+
+h1 {
+  margin: 0 0 12px;
+  font-size: 28px;
+  font-weight: 650;
+}
+
+.lead,
+.hint {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.lead {
+  color: #44403c;
+}
+
+.hint {
+  margin-top: 16px;
+  color: #78716c;
+  font-size: 14px;
+}

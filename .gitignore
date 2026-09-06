@@ -1,0 +1,17 @@
+.env
+backend/.env
+frontend/.env
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.venv/
+venv/
+env/
+node_modules/
+frontend/dist/
+frontend/.vite/
+.DS_Store
+*.log
+backend/storage/**
+!backend/storage/.gitkeep
