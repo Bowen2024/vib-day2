@@ -62,6 +62,36 @@ class ExtractModelOutput(BaseModel):
     incomplete_reason: str | None
 
 
+class SearchRequest(BaseModel):
+    city_a: str
+    address_a: str
+    city_b: str
+    address_b: str
+    category: str
+
+
+class Midpoint(BaseModel):
+    longitude: float
+    latitude: float
+
+
+class SearchPoi(BaseModel):
+    name: str
+    address: str
+    distance_to_midpoint_m: float
+
+
+class SearchData(BaseModel):
+    search_id: str
+    midpoint: Midpoint
+    pois: list[SearchPoi]
+
+
+class SearchResponse(BaseModel):
+    request_id: str
+    data: SearchData
+
+
 class ErrorBody(BaseModel):
     code: str
     message: str

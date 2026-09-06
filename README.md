@@ -1,8 +1,8 @@
 # 语音约碰面地点
 
-同一座城市内，根据两个人的口述地点推荐中间附近的店铺。当前进度：骨架、前端录音、后端上传、语音识别、地址提取。
+同一座城市内，根据两个人的口述地点推荐中间附近的店铺。当前进度：骨架、前端录音、后端上传、语音识别、地址提取、搜店。
 
-真实 `POST /asr` 需要 `backend/.env` 中的 `BAILIAN_API_KEY`，并会产生百炼调用费用。真实 `POST /extract` 需要 `DEEPSEEK_API_KEY`，并会产生 DeepSeek 调用费用。Mock 测试不调用真实服务。
+真实 `POST /asr` 需要 `backend/.env` 中的 `BAILIAN_API_KEY`，并会产生百炼调用费用。真实 `POST /extract` 需要 `DEEPSEEK_API_KEY`，并会产生 DeepSeek 调用费用。真实 `POST /search` 需要 `AMAP_API_KEY`，并会产生高德调用费用。Mock 测试不调用真实服务。
 
 ## 环境
 
@@ -66,6 +66,8 @@ python -m pytest
 
 真实 `POST /extract` 在 `http://localhost:8003/docs` 调试。请求体为 `text` 与 `city`；成功时 `data` 只含五个业务字段。需要 `DEEPSEEK_API_KEY`，会产生 DeepSeek 调用费用。
 
+真实 `POST /search` 在同一文档页调试。请求体为 `city_a`、`address_a`、`city_b`、`address_b`、`category`。成功时 `data` 含 `search_id`、`midpoint`、最多 3 条 `pois`。需要 `AMAP_API_KEY`，会产生高德调用费用。`distance_to_midpoint_m` 只表示到地理中点的距离，不能理解成两人出行时间相同。
+
 真实 `POST /upload` 需要本机 `ffprobe`（FFmpeg），只做探测、不转码。macOS 安装：
 
 ```bash
@@ -75,4 +77,4 @@ ffprobe -version
 
 ## 尚未实现
 
-搜店、推荐语、语音播报，以及前端接入上传/识别/提取接口均未实现。
+推荐语、语音播报，以及前端接入上传/识别/提取/搜店接口均未实现。
